@@ -18,16 +18,21 @@
         <section>
             <div>
                 <div>
-                    <form action="app.php" method="post">
+                    <form action="signup.php" method="post" id="SignUp">
                         <input type="text" name="username" placeholder="Username">
-                        <input type="text" name="Email" placeholder="Example@email.com">
-                        <input type="password" name="Password" id="Password">
+                        <input type="text" name="email" placeholder="Example@email.com">
+                        <input type="password" name="password" id="password" placeholder="password">
+                        <input type="submit" value="sign up">
                     </form>
                 </div>
             </div>
             <div>
                 <div>
-
+                    <form action="login.php" method="post">
+                        <input type="text" name="usernameandmail" placeholder="Username or mailadres">
+                        <input type="password" name="password" id="password">
+                        <input type="submit" value="Login">
+                    </form>
                 </div>
             </div>
         </section>
