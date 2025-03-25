@@ -18,10 +18,8 @@
         $password = $_POST['password'] ?? '';
     
         if (filter_var($whois, FILTER_VALIDATE_EMAIL)) {
-            // Kullanıcı email ile giriş yapıyorsa
             $sql = "SELECT * FROM users WHERE email = :whois";
         } else {
-            // Kullanıcı username ile giriş yapıyorsa
             $sql = "SELECT * FROM users WHERE username = :whois";
         }
 
@@ -32,8 +30,8 @@
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_email'] = $user['email']; // Hatalı değişken adını düzelttim
-        $_SESSION['user_username'] = $user['username']; // Kullanıcı adını da saklayalım
+        $_SESSION['user_email'] = $user['email']; 
+        $_SESSION['user_username'] = $user['username'];
 
         header("Location: Dashboard.php");
         exit();

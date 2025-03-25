@@ -56,12 +56,14 @@
                         <input class="flip-card__input" name="email" placeholder="Email" type="email">
                         <input class="flip-card__input" name="password" placeholder="Password" type="password">
                         <button class="flip-card__btn">Confirm!</button>
+                        <button class="flip-card__btn">Mail</button>
                      </form>
                   </div>
                </div>
             </label>
         </div>   
    </div>
+    
 
    
 </body>

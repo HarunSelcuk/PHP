@@ -1,4 +1,7 @@
 <?php
+    require 'mail.php';
+
+    
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -21,6 +24,19 @@
                 
                 $stmt -> bindParam(':password', $hashpasword);
                 $stmt->execute();
+
+
+                $to = $_POST['email'];
+                $subject = "Kayıt Başarılı!";
+                $body = "<h3>Merhaba " . $_POST['username'] . "!</h3><p>Kaydınız başarıyla tamamlandı.</p>";
+            
+                if (sendMail($to, $subject, $body) === true) {
+                    echo "Kayıt başarılı! E-posta gönderildi.";
+                } else {
+                    echo "Kayıt başarılı, ancak e-posta gönderilemedi.";
+                }
+               
+
     } catch (\Throwable $th) {
         echo "Failed" . $th -> getMessage();
     }
