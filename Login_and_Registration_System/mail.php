@@ -11,13 +11,13 @@ function sendMail($to,$subject,$body){
     try {
         $mail->isSMTP();
         $mail->SMTPAuth = true;
-        $mail->Username ="harunselcuk56@gmail.com";
+        $mail->Username ="yourmail@gmail.com";
         $mail->Password = "";
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port =587;
         $mail->Host = 'smtp.gmail.com';
 
-        $mail-> setFrom('harunselcuk56@gmail.com', 'Harun Selcuk');
+        $mail-> setFrom('yourmail@gmail.com', 'Harun Selcuk');
         $mail->addAddress($to);
 
         $mail->isHTML(true);
